@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Edulearn</title>
+    <script src="https://kit.fontawesome.com/66ba98122d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="courses" class="device-screen active">
+            <nav class="nav-bar" id="navbar">
+                <div class="nav-logo">EduLearn<span style="color:blue">.</span></div>
+                <div class="nav-links">
+                    <a href="home.html">Home</a>
+                    <a href="course.html" class="active">Courses</a>
+                    <a href="about.html">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div>
+                    <button class="btn btn-outline" style="margin-right: 10px;" >Login</button>
+                    <button class="btn btn-primary" >Sign Up</button>
+                </div>
+            </nav>
+            <div class="courses-layout">
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <div style="margin-bottom: 30px;">
+                            <input type="text" placeholder="Search courses..." class="form-input" id="course-search" >
+                        </div>
+                        <div class="filter-group">
+                            <span class="filter-title">Categories</span>
+                            <label class="checkbox-row"><input type="checkbox" class="course-filter" value="development" checked> Web Development</label>
+                            <label class="checkbox-row"><input type="checkbox" class="course-filter" value="data" checked> Data Science</label>
+                            <label class="checkbox-row"><input type="checkbox" class="course-filter" value="design" checked> Design</label>
+                        </div>
+                        <div class="filter-group">
+                            <span class="filter-title">Level</span>
+                            <label class="checkbox-row"><input type="checkbox" checked> Beginner</label>
+                            <label class="checkbox-row"><input type="checkbox" checked> Intermediate</label>
+                            <label class="checkbox-row"><input type="checkbox" checked> Advanced</label>
+                        </div>
+                    </aside>
+                    <div class="course-grid" id="course-grid">
+                        <!-- Card 1 -->
+                        <div class="course-card" data-category="development">
+                            <div class="cc-img">
+                                <span class="cc-badge">Development</span>
+                                <img src="" style="width:100%; height:100%; object-fit:cover;">
+                            </div>
+                            <div class="cc-body">
+                                <h3 class="cc-title">Complete Web Development Bootcamp 2025</h3>
+                                <div class="cc-meta"><span><i class="fa-regular fa-clock"></i> 22h</span> <span>4.9 <i class="fa-solid fa-star" style="color:#fbbf24"></i></span></div>
+                                <div class="cc-footer">
+                                    <div class="cc-price">$19.99</div>
+                                    <button class="btn btn-outline" style="padding: 6px 15px; font-size: 12px;">Preview</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card" data-category="design">
+                            <div class="cc-img">
+                                <span class="cc-badge">Design</span>
+                                <img src="" style="width:100%; height:100%; object-fit:cover;">
+                            </div>
+                            <div class="cc-body">
+                                <h3 class="cc-title">UI/UX Design Masterclass using Figma</h3>
+                                <div class="cc-meta"><span><i class="fa-regular fa-clock"></i> 15h</span> <span>4.8 <i class="fa-solid fa-star" style="color:#fbbf24"></i></span></div>
+                                <div class="cc-footer">
+                                    <div class="cc-price">$24.99</div>
+                                    <button class="btn btn-outline" style="padding: 6px 15px; font-size: 12px;">Preview</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="course-card" data-category="data">
+                            <div class="cc-img">
+                                <span class="cc-badge">Python</span>
+                                <img src="" style="width:100%; height:100%; object-fit:cover;">
+                            </div>
+                            <div class="cc-body">
+                                <h3 class="cc-title">Python for Data Science and Machine Learning</h3>
+                                <div class="cc-meta"><span><i class="fa-regular fa-clock"></i> 30h</span> <span>4.9 <i class="fa-solid fa-star" style="color:#fbbf24"></i></span></div>
+                                <div class="cc-footer">
+                                    <div class="cc-price">$29.99</div>
+                                    <button class="btn btn-outline" style="padding: 6px 15px; font-size: 12px;">Preview</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
