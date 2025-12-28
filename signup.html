@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Edulearn - Sign Up</title>
+    <script src="https://kit.fontawesome.com/66ba98122d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="signup" class="device-screen active">
+        <nav class="nav-bar" id="navbar">
+            <div class="nav-logo">EduLearn<span style="color:blue">.</span></div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="course.html">Courses</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <a href="login.html" class="btn btn-outline" style="margin-right: 10px;">Login</a>
+                <a href="signup.html" class="btn btn-primary active">Sign Up</a>
+            </div>
+        </nav>
+        <section class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 50px;">Create Your Account</div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="auth-container">
+                        <div class="auth-left">
+                            <div class="nav-logo" style="position:absolute; top:30px; left:30px; color:white; z-index:2; cursor:pointer;" onclick="switchView('home')">EduLearn.</div>
+                            <div class="auth-overlay">
+                                <h2 style="font-size: 36px; margin-bottom: 20px; font-family:var(--font-head);">"The best decision I made for my career."</h2>
+                                <p style="font-size: 18px; opacity: 0.9;">Join 10,000+ students learning on EduLearn today.</p>
+                                <div style="margin-top: 25px; display:flex; gap:5px; color:#fbbf24; font-size:20px;">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <button class="social-btn" style="width:100%; padding: 12px; margin-bottom: 20px; background: #fff; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;"><i class="fa-brands fa-google" style="color:#db4437;"></i> Sign up with Google</button>
+                    <div class="divider" style="text-align: center; margin: 20px 0; position: relative;">Or</div>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" placeholder="Create password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-input" placeholder="Confirm password" required>
+                    </div>
+                    <button class="btn btn-primary" style="width:100%; padding: 12px; margin-top: 10px;" type="submit">Sign Up</button>
+                    <div class="auth-switch" style="text-align: center; margin-top: 20px;">
+                        Already have an account? <a href="login.html" style="color: blue;">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
