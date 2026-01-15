@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Python for Data Science - Edulearn</title>
+    <script src="https://kit.fontawesome.com/66ba98122d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .course-detail-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .course-hero {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 60px 60px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px;
+            gap: 40px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .course-hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .course-price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .course-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .course-stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+
+        .course-video-section {
+            margin: 0 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .course-video-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .course-about {
+            margin: 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .about-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .about-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: gray;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .course-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: #d1fae5;
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+        }
+
+        .highlight-item i {
+            color: #10b981;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+
+        .highlight-item span {
+            flex: 1;
+        }
+
+        .course-curriculum {
+            margin: 0 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .course-curriculum h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .curriculum-item {
+            padding: 20px;
+            border-bottom: 1px solid rgb(214, 224, 224);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .curriculum-item:last-child {
+            border-bottom: none;
+        }
+
+        .curriculum-item:hover {
+            background: #ecfdf5;
+            padding-left: 25px;
+        }
+
+        .curriculum-item h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .curriculum-item p {
+            color: gray;
+            font-size: 13px;
+        }
+
+        .sidebar-course {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .sidebar-course h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .requirement-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .requirement-list li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            color: gray;
+            font-size: 14px;
+        }
+
+        .requirement-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .enroll-btn {
+            width: 100%;
+            padding: 15px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .enroll-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .instructor-section {
+            margin: 0 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .instructor-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .instructor-card {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            padding: 25px;
+            background: #ecfdf5;
+            border-radius: 12px;
+        }
+
+        .instructor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .instructor-info h3 {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .instructor-info p {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .course-hero {
+                padding: 40px 20px;
+                flex-direction: column;
+                text-align: center;
+                margin: 20px;
+            }
+
+            .course-hero-content h1 {
+                font-size: 28px;
+            }
+
+            .course-video-section,
+            .about-content,
+            .course-curriculum,
+            .instructor-section {
+                margin: 0 20px;
+                padding: 25px;
+            }
+
+            .course-about {
+                grid-template-columns: 1fr;
+                margin: 0 20px;
+                gap: 20px;
+            }
+
+            .sidebar-course {
+                position: static;
+                top: auto;
+            }
+
+            .course-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .instructor-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="courses" class="device-screen active">
+        <nav class="nav-bar" id="navbar">
+            <a href="home.html" class="nav-logo">EduLearn<span style="color:blue">.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="home.html">Home</a>
+                <a href="course.html">Courses</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="mobile-login">Login</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-primary" style="margin-right: 10px;">Login</a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <div class="course-detail-container">
+            <!-- Course Hero Section -->
+            <div class="course-hero">
+                <div class="course-hero-content">
+                    <h1>Python for Data Science and Machine Learning</h1>
+                    <p>Master Python, data analysis, machine learning, and AI to build intelligent applications in 30 hours.</p>
+                    <div class="course-price">$29.99</div>
+                    <div class="course-stats">
+                        <div class="course-stat">
+                            <i class="fa-solid fa-clock" style="color: white;"></i>
+                            <span>30 hours of content</span>
+                        </div>
+                        <div class="course-stat">
+                            <i class="fa-solid fa-star" style="color: #fbbf24;"></i>
+                            <span>4.9 Rating (1500+ reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="course-video-section">
+                <h2><i class="fa-solid fa-play-circle" style="color: #10b981; margin-right: 10px;"></i>Course Preview</h2>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rfscVS0vtbw?si=XQBmwFQhHOzt4bbM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p style="color: gray; font-size: 14px;">Get an introduction to Python and data science concepts in this comprehensive course preview. <a href="https://www.youtube.com/watch?v=rfscVS0vtik" target="_blank" style="color: #10b981; text-decoration: none; font-weight: 600;">Watch on YouTube</a></p>
+            </div>
+
+            <!-- About Section -->
+            <div class="course-about">
+                <div class="about-content">
+                    <h2>About This Course</h2>
+                    <p>This comprehensive Python for Data Science course is designed to take you from beginner to advanced data scientist. You'll learn everything needed to work with data, build machine learning models, and deploy AI solutions in production.</p>
+                    
+                    <p><strong>What You'll Learn:</strong></p>
+                    <p>• Python programming fundamentals and advanced concepts<br>
+                    • NumPy for numerical computing<br>
+                    • Pandas for data manipulation and analysis<br>
+                    • Matplotlib and Seaborn for data visualization<br>
+                    • Statistical analysis and hypothesis testing<br>
+                    • Machine learning algorithms and models<br>
+                    • Deep learning with neural networks<br>
+                    • Natural Language Processing (NLP)<br>
+                    • Real-world projects and case studies<br>
+                    • Model deployment and production best practices</p>
+
+                    <p>You'll work on 5+ real-world projects that you can add to your portfolio and impress potential employers.</p>
+                </div>
+
+                <div class="sidebar-course">
+                    <h3>Course Requirements</h3>
+                    <ul class="requirement-list">
+                        <li>Basic programming knowledge</li>
+                        <li>Python installed on your computer</li>
+                        <li>Jupyter Notebook or IDE</li>
+                        <li>Basic mathematics understanding</li>
+                        <li>Enthusiasm to learn data science</li>
+                    </ul>
+                    <button class="enroll-btn" onclick="enrollCourse()">Enroll Now</button>
+                    <button class="enroll-btn" style="background: transparent; border: 2px solid #10b981; color: #10b981;" onclick="addWishlist()">
+                        <i class="fa-regular fa-heart"></i> Add to Wishlist
+                    </button>
+                </div>
+            </div>
+
+            <!-- Curriculum Section -->
+            <div class="course-curriculum">
+                <h2><i class="fa-solid fa-book" style="color: #10b981; margin-right: 10px;"></i>Course Curriculum</h2>
+                
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 1: Python Fundamentals (3.5 hours)</h4>
+                    <p>Learn Python syntax, data types, control flow, functions, and object-oriented programming concepts.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 2: NumPy & Pandas (4 hours)</h4>
+                    <p>Master numerical computing with NumPy and data manipulation with Pandas for data analysis.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 3: Data Visualization (2.5 hours)</h4>
+                    <p>Create compelling visualizations using Matplotlib, Seaborn, and Plotly to communicate data insights.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 4: Statistical Analysis (3 hours)</h4>
+                    <p>Explore statistical methods, hypothesis testing, and probability distributions for data analysis.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 5: Machine Learning Fundamentals (6 hours)</h4>
+                    <p>Learn supervised learning, unsupervised learning, model evaluation, and scikit-learn framework.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 6: Deep Learning & AI (5.5 hours)</h4>
+                    <p>Build neural networks with TensorFlow and Keras for advanced machine learning applications.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 7: Real-World Projects (5.5 hours)</h4>
+                    <p>Work on capstone projects including predictive modeling, NLP, and computer vision applications.</p>
+                </div>
+            </div>
+
+            <!-- Instructor Section -->
+            <div class="instructor-section">
+                <h2><i class="fa-solid fa-user-tie" style="color: #10b981; margin-right: 10px;"></i>Meet Your Instructor</h2>
+                
+                <div class="instructor-card">
+                    <img src="https://via.placeholder.com/100" alt="Instructor">
+                    <div class="instructor-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <p>Data Scientist | ML Engineer | PhD in Computer Science</p>
+                        <p>Michael is a renowned data scientist with 12+ years of experience building AI/ML solutions for leading tech companies. He's passionate about education and has helped 6000+ students transition into data science careers.</p>
+                        <div style="margin-top: 10px;">
+                            <i class="fa-brands fa-linkedin" style="color: #10b981; margin-right: 10px;"></i>
+                            <i class="fa-brands fa-github" style="color: #10b981;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function enrollCourse() {
+            alert('Thank you for enrolling! Check your email for further instructions.');
+        }
+
+        function addWishlist() {
+            alert('Course added to your wishlist!');
+        }
+    </script>
+</body>
+</html>
