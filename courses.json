@@ -1,0 +1,69 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Complete Web Development Bootcamp 2025",
+      "category": "Web Development",
+      "price": 19.99,
+      "duration": "22 hours",
+      "rating": 4.8,
+      "reviews": 1250,
+      "instructor": "John Smith",
+      "description": "Master HTML, CSS, JavaScript, React, Node.js and become a professional web developer in just 22 hours.",
+      "videoUrl": "https://www.youtube.com/embed/HXV3zeQKqGY",
+      "link": "course-1.html",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express.js"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "UI/UX Design Masterclass",
+      "category": "Design",
+      "price": 24.99,
+      "duration": "18 hours",
+      "rating": 4.9,
+      "reviews": 890,
+      "instructor": "Sarah Johnson",
+      "description": "Learn modern UI/UX design principles and master Figma, the leading design tool used by top companies worldwide.",
+      "videoUrl": "https://www.youtube.com/embed/4Se0_w9Y8SE",
+      "link": "course-2.html",
+      "skills": [
+        "Figma",
+        "UI Design",
+        "UX Research",
+        "Wireframing",
+        "Prototyping",
+        "Design Systems"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Python for Data Science",
+      "category": "Data Science",
+      "price": 22.99,
+      "duration": "20 hours",
+      "rating": 4.7,
+      "reviews": 756,
+      "instructor": "Mike Chen",
+      "description": "Master Python programming and learn advanced data science techniques including machine learning and data visualization.",
+      "videoUrl": "https://www.youtube.com/embed/rfscVS0vtik",
+      "link": "course-3.html",
+      "skills": [
+        "Python",
+        "Data Analysis",
+        "Machine Learning",
+        "Pandas",
+        "NumPy",
+        "Data Visualization",
+        "TensorFlow"
+      ]
+    }
+  ]
+}

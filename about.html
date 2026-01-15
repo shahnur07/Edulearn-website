@@ -13,17 +13,22 @@
 <body>
     <div id="about" class="device-screen active">
             <nav class="nav-bar" id="navbar">
-                <div class="nav-logo">EduLearn<span style="color:blue">.</span></div>
-                <div class="nav-links">
+                <a href="home.html" class="nav-logo">EduLearn<span style="color:blue">.</span></a>
+                <div class="nav-links" id="navLinks">
                     <a href="home.html">Home</a>
                     <a href="course.html">Courses</a>
                     <a href="about.html" class="active">About</a>
                     <a href="contact.html">Contact</a>
+                    <a href="login.html" class="mobile-login">Login</a>
                 </div>
-                <div>
-                    <a href="login.html" class="btn btn-outline" style="margin-right: 10px;">Login</a>
-                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                <div class="nav-buttons">
+                    <a href="login.html" class="btn btn-primary">Login</a>
                 </div>
+                <button class="hamburger" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         <header class="hero">
                 <div class="hero-content">

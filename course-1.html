@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Web Development Bootcamp - Edulearn</title>
+    <script src="https://kit.fontawesome.com/66ba98122d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .course-detail-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .course-hero {
+            background: linear-gradient(135deg, #193ffa 0%, #6480fc 100%);
+            color: white;
+            padding: 60px 60px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px;
+            gap: 40px;
+        }
+
+        .course-hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .course-hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .course-price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .course-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .course-stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+
+        .course-video-section {
+            margin: 0 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .course-video-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .course-about {
+            margin: 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .about-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .about-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: gray;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .course-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: #f0f7ff;
+            border-radius: 12px;
+            border-left: 4px solid blue;
+        }
+
+        .highlight-item i {
+            color: blue;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+
+        .highlight-item span {
+            flex: 1;
+        }
+
+        .course-curriculum {
+            margin: 0 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .course-curriculum h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .curriculum-item {
+            padding: 20px;
+            border-bottom: 1px solid rgb(214, 224, 224);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .curriculum-item:last-child {
+            border-bottom: none;
+        }
+
+        .curriculum-item:hover {
+            background: #f8fbff;
+            padding-left: 25px;
+        }
+
+        .curriculum-item h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .curriculum-item p {
+            color: gray;
+            font-size: 13px;
+        }
+
+        .sidebar-course {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .sidebar-course h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .requirement-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .requirement-list li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            color: gray;
+            font-size: 14px;
+        }
+
+        .requirement-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: blue;
+            font-weight: 700;
+        }
+
+        .enroll-btn {
+            width: 100%;
+            padding: 15px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .enroll-btn:hover {
+            background: rgba(1, 1, 185, 0.877);
+            transform: translateY(-2px);
+        }
+
+        .instructor-section {
+            margin: 0 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgb(214, 224, 224);
+        }
+
+        .instructor-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .instructor-card {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            padding: 25px;
+            background: #f8fbff;
+            border-radius: 12px;
+        }
+
+        .instructor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .instructor-info h3 {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .instructor-info p {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .course-hero {
+                padding: 40px 20px;
+                flex-direction: column;
+                text-align: center;
+                margin: 20px;
+            }
+
+            .course-hero-content h1 {
+                font-size: 28px;
+            }
+
+            .course-video-section,
+            .about-content,
+            .course-curriculum,
+            .instructor-section {
+                margin: 0 20px;
+                padding: 25px;
+            }
+
+            .course-about {
+                grid-template-columns: 1fr;
+                margin: 0 20px;
+                gap: 20px;
+            }
+
+            .sidebar-course {
+                position: static;
+                top: auto;
+            }
+
+            .course-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .instructor-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="courses" class="device-screen active">
+        <nav class="nav-bar" id="navbar">
+            <a href="home.html" class="nav-logo">EduLearn<span style="color:blue">.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="home.html">Home</a>
+                <a href="course.html">Courses</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="mobile-login">Login</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-primary" style="margin-right: 10px;">Login</a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <div class="course-detail-container">
+            <!-- Course Hero Section -->
+            <div class="course-hero">
+                <div class="course-hero-content">
+                    <h1>Complete Web Development Bootcamp 2025</h1>
+                    <p>Master HTML, CSS, JavaScript, React, Node.js and become a professional web developer in just 22 hours.</p>
+                    <div class="course-price">$19.99</div>
+                    <div class="course-stats">
+                        <div class="course-stat">
+                            <i class="fa-solid fa-clock" style="color: white;"></i>
+                            <span>22 hours of content</span>
+                        </div>
+                        <div class="course-stat">
+                            <i class="fa-solid fa-star" style="color: #fbbf24;"></i>
+                            <span>4.9 Rating (1200+ reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="course-video-section">
+                <h2><i class="fa-solid fa-play-circle" style="color: blue; margin-right: 10px;"></i>Course Preview</h2>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HXV3zeQKqGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p style="color: gray; font-size: 14px;">Watch this introductory video to get an overview of what you'll learn in this comprehensive web development course. <a href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank" style="color: blue; text-decoration: none; font-weight: 600;">Watch on YouTube</a></p>
+            </div>
+
+            <!-- About Section -->
+            <div class="course-about">
+                <div class="about-content">
+                    <h2>About This Course</h2>
+                    <p>This comprehensive web development bootcamp is designed for beginners and intermediate developers who want to master modern web development. Over the course of 22 hours, you'll learn everything you need to build professional, responsive web applications.</p>
+                    
+                    <p><strong>What You'll Learn:</strong></p>
+                    <p>• HTML5 and semantic markup for modern web structure<br>
+                    • Advanced CSS3 techniques including Flexbox and Grid<br>
+                    • JavaScript ES6+ fundamentals and advanced concepts<br>
+                    • React.js for building interactive user interfaces<br>
+                    • Node.js and Express for backend development<br>
+                    • Database design with MongoDB<br>
+                    • RESTful API development<br>
+                    • Deployment and production best practices</p>
+
+                    <p>By the end of this course, you'll have a solid portfolio of projects that you can showcase to potential employers.</p>
+                </div>
+
+                <div class="sidebar-course">
+                    <h3>Course Requirements</h3>
+                    <ul class="requirement-list">
+                        <li>Basic computer knowledge</li>
+                        <li>A code editor (VS Code recommended)</li>
+                        <li>Google Chrome or Firefox browser</li>
+                        <li>4GB RAM minimum</li>
+                        <li>Passion to learn web development</li>
+                    </ul>
+                    <button class="enroll-btn" onclick="enrollCourse()">Enroll Now</button>
+                    <button class="enroll-btn" style="background: transparent; border: 2px solid blue; color: blue;" onclick="addWishlist()">
+                        <i class="fa-regular fa-heart"></i> Add to Wishlist
+                    </button>
+                </div>
+            </div>
+
+            <!-- Curriculum Section -->
+            <div class="course-curriculum">
+                <h2><i class="fa-solid fa-book" style="color: blue; margin-right: 10px;"></i>Course Curriculum</h2>
+                
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 1: HTML Fundamentals (2.5 hours)</h4>
+                    <p>Learn HTML5, semantic markup, forms, accessibility, and best practices for structuring web content.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 2: Advanced CSS (3 hours)</h4>
+                    <p>Master CSS3, Flexbox, Grid, animations, responsive design, and modern styling techniques.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 3: JavaScript Essentials (4 hours)</h4>
+                    <p>Deep dive into JavaScript ES6+, async/await, DOM manipulation, and functional programming.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 4: React.js (5 hours)</h4>
+                    <p>Build interactive UIs with React hooks, state management, and component lifecycle.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 5: Backend with Node.js & Express (4 hours)</h4>
+                    <p>Create robust backend servers, handle requests, and build scalable applications.</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4><i class="fa-solid fa-chevron-right"></i> Module 6: Databases & Deployment (3.5 hours)</h4>
+                    <p>Work with MongoDB, deploy applications to production, and implement best practices.</p>
+                </div>
+            </div>
+
+            <!-- Instructor Section -->
+            <div class="instructor-section">
+                <h2><i class="fa-solid fa-user-tie" style="color: blue; margin-right: 10px;"></i>Meet Your Instructor</h2>
+                
+                <div class="instructor-card">
+                    <img src="https://via.placeholder.com/100" alt="Instructor">
+                    <div class="instructor-info">
+                        <h3>John Smith</h3>
+                        <p>Senior Full Stack Developer | 8+ years experience</p>
+                        <p>John has worked with leading tech companies and is passionate about teaching. He's helped over 5000+ students master web development and land their dream jobs.</p>
+                        <div style="margin-top: 10px;">
+                            <i class="fa-brands fa-linkedin" style="color: blue; margin-right: 10px;"></i>
+                            <i class="fa-brands fa-twitter" style="color: blue;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function enrollCourse() {
+            alert('Thank you for enrolling! Check your email for further instructions.');
+        }
+
+        function addWishlist() {
+            alert('Course added to your wishlist!');
+        }
+    </script>
+</body>
+</html>
